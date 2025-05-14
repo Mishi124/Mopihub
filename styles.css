@@ -90,19 +90,19 @@ body {
 }
 
 .video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 600px;
+  margin: auto;
 }
 
+/* Each Fake Video */
 .video-link {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 aspect ratio */
-  background-image: url('https://i.ibb.co/SXy9FcgL/download.jpg');
+  padding-top: 56.25%; /* 16:9 */
   background-size: cover;
   background-position: center;
   border-radius: 12px;
@@ -116,27 +116,25 @@ body {
   filter: blur(1.5px);
 }
 
-.video-link .loader {
+/* Loader */
+.loader {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 50px;
-  height: 50px;
-  border: 5px solid rgba(255,255,255,0.2);
-  border-top: 5px solid #f90;
+  top: 50%; left: 50%;
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(255,255,255,0.2);
+  border-top: 6px solid #f90;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   animation: spin 1s linear infinite;
-  display: none;
 }
-
 
 @keyframes spin {
   0% { transform: translate(-50%, -50%) rotate(0deg); }
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* Responsive */
+/* Responsive Popup */
 @media (max-width: 600px) {
   .age-popup .popup-content {
     max-width: 90%;
